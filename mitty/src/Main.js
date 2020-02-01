@@ -22,20 +22,22 @@ class Main extends Component {
 		return (
 			<HashRouter>
 				<div>
-					<h1>MITTY</h1>
-					<ul className="header">
-						<li><NavLink to="/">Home</NavLink></li>
-						<li><NavLink to="/about">About</NavLink></li>
-						<li><NavLink to="/howItWorks">How It Works</NavLink></li>
-						<li><NavLink to="/resources">Resources</NavLink></li>
-						<li><NavLink to="/contactUs">Contact Us</NavLink></li>
-					</ul>
-					<div className="content">
-						<Route exact path="/" component={Home}/>
-						<Route path="/about" component={About}/>
-						<Route path="/howItWorks" component={HowItWorks}/>
-						<Route path="/resources" component={Resources}/>
-						<Route path="/contactUs" component={ContactUs}/>
+					<div className="main">
+						<h1>MITTY</h1>
+						<ul className="header">
+							<li><NavLink to="/">Home</NavLink></li>
+							<li><NavLink to="/about">About</NavLink></li>
+							<li><NavLink to="/howItWorks">How It Works</NavLink></li>
+							<li><NavLink to="/resources">Resources</NavLink></li>
+							<li><NavLink to="/contactUs">Contact Us</NavLink></li>
+						</ul>
+						<div className="content">
+							<Route exact path="/" component={Home}/>
+							<Route path="/about" component={About}/>
+							<Route path="/howItWorks" component={HowItWorks}/>
+							<Route path="/resources" component={Resources}/>
+							<Route path="/contactUs" component={ContactUs}/>
+						</div>
 					</div>
 				</div>
 			</HashRouter>

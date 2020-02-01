@@ -2,11 +2,23 @@ import React, { Component } from "react";
 
 class Home extends Component {
 
+	fileSystem () {
+		console.log("File System Selected")
+	}
+
+
+
 	render () {
 		return (
-			<div>
+			<div class="home-group">
 				<h2>Home</h2>
-				<p>Stuff for image to text conversion</p>
+				<p>Import an Image of Your Equation:</p>
+				<div class="import-group">
+					<button>File System</button>
+					<button>Clipboard</button>
+					<button>Snipping Tool</button>
+					<button>Camera</button>
+				</div>
 			</div>
 		);
 	}
