@@ -6,7 +6,7 @@ class Home extends Component {
 		super(props);
 		this.state = {
 			hasImage: false,
-			output: ""
+			output: "",
 		};
 		this.output = "";
 		this.fileSystem = this.fileSystem.bind(this);
