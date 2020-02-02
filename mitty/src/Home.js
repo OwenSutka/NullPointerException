@@ -16,7 +16,7 @@ class Home extends Component {
 	}
 
 	fileSystem () {
-		alert('File System');
+		// alert('File System');
 		this.setState({
 			hasImage: true,
 			output: "Image obtained from fileSystem"
@@ -24,7 +24,7 @@ class Home extends Component {
 	}
 
 	clipboard () {
-		alert('Clipboard');
+		// alert('Clipboard');
 		this.setState({
 			hasImage: true,
 			output: "Image obtained from clipboard"
@@ -32,7 +32,7 @@ class Home extends Component {
 	}
 
 	snippingTool () {
-		alert('Snipping Tool');
+		// alert('Snipping Tool');
 		this.setState({
 			hasImage: true,
 			output: "Image obtained from snippingTool"
@@ -40,11 +40,30 @@ class Home extends Component {
 	}
 
 	camera () {
-		alert('Camera');
+		// alert('Camera');
 		this.setState({
 			hasImage: true,
 			output: "Image obtained from camera"
 		});
+	}
+
+	ImagePreview(input) {
+		return (
+		<div className="image-preview">
+			<div className="preview">
+				<h3>Image Preview</h3>
+				<p>{input}</p> 
+			</div>
+			<div className="cropping-tools"></div>
+		</div>);
+	}
+
+	Result(input) {
+		return (
+			<div className="result-output">
+	
+			</div>
+		)
 	}
 
 	render () {
@@ -58,16 +77,11 @@ class Home extends Component {
 					<button onClick ={this.snippingTool}>Snipping Tool</button>
 					<button onClick ={this.camera}>Camera</button>
 				</div>
-				<div className="image-preview">
-					{this.state.hasImage ? <p>{this.state.output}</p> : null}
-				</div>
-				<div className="result-output">
-
-				</div>
+				{this.state.hasImage ? this.ImagePreview(this.state.output) : null}
+				{this.state.hasOutput ? this.Result() : null}
 			</div>
 		);
 	}
-
 }
 
 export default Home;
