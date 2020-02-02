@@ -32,11 +32,11 @@ class Main extends Component {
 							<li><NavLink to="/contactUs">Contact Us</NavLink></li>
 						</ul>
 						<div className="content">
-							<Route exact path="/" component={Home}/>
 							<Route path="/about" component={About}/>
 							<Route path="/howItWorks" component={HowItWorks}/>
 							<Route path="/resources" component={Resources}/>
 							<Route path="/contactUs" component={ContactUs}/>
+							<Route exact path="/" component={Home}/>
 						</div>
 					</div>
 				</div>

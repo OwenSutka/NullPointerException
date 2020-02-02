@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Result from './Result'
 
 class Home extends Component {
 
@@ -6,6 +7,8 @@ class Home extends Component {
 		super(props);
 		this.state = {
 			hasImage: false,
+			hasOutput: false,
+			image: "",
 			output: "",
 		};
 		this.output = "";
@@ -13,13 +16,14 @@ class Home extends Component {
 		this.clipboard = this.clipboard.bind(this);
 		this.snippingTool = this.snippingTool.bind(this);
 		this.camera = this.camera.bind(this);
+		this.getConversion = this.getConversion.bind(this);
 	}
 
 	fileSystem () {
 		// alert('File System');
 		this.setState({
 			hasImage: true,
-			output: "Image obtained from fileSystem"
+			image: "Image obtained from fileSystem"
 		});
 	}
 
@@ -27,7 +31,7 @@ class Home extends Component {
 		// alert('Clipboard');
 		this.setState({
 			hasImage: true,
-			output: "Image obtained from clipboard"
+			image: "Image obtained from clipboard"
 		});
 	}
 
@@ -35,7 +39,7 @@ class Home extends Component {
 		// alert('Snipping Tool');
 		this.setState({
 			hasImage: true,
-			output: "Image obtained from snippingTool"
+			image: "Image obtained from snippingTool"
 		});
 	}
 
@@ -43,27 +47,34 @@ class Home extends Component {
 		// alert('Camera');
 		this.setState({
 			hasImage: true,
-			output: "Image obtained from camera"
+			image: "Image obtained from camera"
+		});
+	}
+
+	getConversion() {
+		this.setState({
+			hasOutput: true,
 		});
 	}
 
 	ImagePreview(input) {
 		return (
-		<div className="image-preview">
+		<div className="image-group">
 			<div className="preview">
 				<h3>Image Preview</h3>
-				<p>{input}</p> 
+				<div className="view">
+					<p>{input}</p> 
+				</div>
+				<div className="editing">
+				<h3>Tools</h3>
+				<div className="image-tools">
+					<button>Crop</button><br />
+					<button>Reset Image</button><br />
+					<button onClick={this.getConversion}>Submit Image</button>
+				</div>
+				</div>
 			</div>
-			<div className="cropping-tools"></div>
 		</div>);
-	}
-
-	Result(input) {
-		return (
-			<div className="result-output">
-	
-			</div>
-		)
 	}
 
 	render () {
@@ -77,8 +88,10 @@ class Home extends Component {
 					<button onClick ={this.snippingTool}>Snipping Tool</button>
 					<button onClick ={this.camera}>Camera</button>
 				</div>
-				{this.state.hasImage ? this.ImagePreview(this.state.output) : null}
-				{this.state.hasOutput ? this.Result() : null}
+				<div className="output-group">
+					{this.state.hasImage ? this.ImagePreview(this.state.image) : null}
+					{this.state.hasOutput ? <Result plain="(5)/(3)" latex="\frac{5}{3}"/> : null}
+				</div>
 			</div>
 		);
 	}

@@ -40,7 +40,7 @@ ul.header li a {
 	display: inline-block;
 }
 
-.content {
+.content, .image-group {
 	background-color: #b2c2bf;
 	padding: 20px;
 }
@@ -55,7 +55,8 @@ ul.header li a {
 	padding: 10;
 }
 
-.import-group button {
+
+.import-group button, .image-preview button {
 	background-color: #C0DED9;
 	color: #3b3a30;
 	cursor: pointer;
@@ -64,5 +65,40 @@ ul.header li a {
 	margin: 0 auto;
 	width: 150px;
 	text-align: center;
-	float: center;
+}
+
+.preview {
+	display: inline-block;
+}
+
+.view {
+	width: 45vw;
+	height: 30vw;
+	margin: 0;
+	padding: auto 10px;
+	border: 5px inset #3b3a30;
+	border-radius: 2px;
+	float: left;
+	text-align: center;
+}
+
+.editing{
+	width: 18vw;
+	height: 10vw;
+	margin: 0;
+	padding: 0;
+	border: 1px double #3b3a30;
+	float: right;
+	text-align: center;
+}
+
+.image-tools button {
+	background-color: #C0DED9;
+	color: #3b3a30;
+	cursor: pointer;
+	padding: 10px 24px;
+	display: inline-block;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
 }
