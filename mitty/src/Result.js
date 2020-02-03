@@ -57,21 +57,29 @@ class Result extends Component {
     }
 
     render() {
-        return (<div className="result-group">
-					<div className="text-tools">
-                        <h3>Result</h3>
-                        Plain Text:
-                        <input id="equation" type="text" readOnly={this.state.canEdit} value={this.state.plain} name="plain" onChange={this.handleChange} />
-                        <button onClick={this.handleEdit}>{this.state.editMode}</button>
-                        <button onClick={this.handleReset}>Reset plaintext</button>
-                        <form onSubmit={this.handleCopy}>
-                             <input type="submit" value="Copy Result" />
-                        </form>
-                    </div>
-                <div className="latex">
-				    <button onClick={this.handleLatex}>{this.state.latexMode}</button><br />
-				    <p className="output">{ this.state.showLatex ? this.state.latex : null}</p>
-                </div>
+        return (
+		<div className="result-group">
+			<div className="text-tools">
+                        	<h3>Result</h3>
+                        	<h4>Plain Text:</h4>
+					<div className= "plainText">
+						<div className= "plainTextOutput">
+							<input type="text" readOnly={this.state.canEdit} value={this.state.plain} name="plain" onChange={this.handleChange} />
+						</div>
+						<div className = "plainTextButtons">
+							<form onSubmit={this.handleCopy}>
+                             					<input type="submit" value="Copy Result" />
+                       					</form>
+                        				<button onClick={this.handleEdit}>{this.state.editMode}</button>
+                        				<button onClick={this.handleReset}>Reset plaintext</button>
+						</div>
+					</div>
+				<h4>LaTeX:</h4>
+                		<div className="latex">
+					<button onClick={this.handleLatex}>{this.state.latexMode}</button><br />
+					<p className="output">{ this.state.showLatex ? this.state.latex : null}</p>
+                		</div>
+			</div>
 		</div>);
     }
 }

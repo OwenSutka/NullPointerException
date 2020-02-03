@@ -59,19 +59,17 @@ class Home extends Component {
 
 	ImagePreview(input) {
 		return (
-		<div className="image-group">
-			<div className="preview">
-				<h3>Image Preview</h3>
-				<div className="view">
-					<p>{input}</p> 
-				</div>
-				<div className="editing">
-				<h3>Tools</h3>
+		<div className="preview">
+			<h3>Image Preview</h3>
+			<div className="view">
+				<p>{input}</p> 
+			</div>
+			<div className="editing">
+				<h4>Tools</h4>
 				<div className="image-tools">
 					<button>Crop</button><br />
 					<button>Reset Image</button><br />
 					<button onClick={this.getConversion}>Submit Image</button>
-				</div>
 				</div>
 			</div>
 		</div>);
@@ -81,7 +79,7 @@ class Home extends Component {
 		return (
 			<div className="home-group">
 				<h2>Home</h2>
-				<p>Import an Image of Your Equation:</p>
+				<h3>Import an Image of Your Equation:</h3>
 				<div className="import-group">
 					<button onClick ={this.fileSystem}>File System</button>
 					<button onClick ={this.clipboard}>Clipboard</button>
