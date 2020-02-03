@@ -7,7 +7,7 @@
 
 body {
 	background-color: #f3f3f3;
-	max-width: 960px;
+	max-width: 58vw;
 	margin: auto;
 }
 
@@ -16,7 +16,7 @@ h1, ul, li {
 	text-align: center;
 }
 
-h2, p, ul {
+h2, h3, p, ul {
 	font-family: sans-serif;
 }
 
@@ -56,14 +56,16 @@ ul.header li a {
 }
 
 
-.import-group button, .image-preview button {
+.import-group button, .image-preview button, .plainTextButtons button, .plainTextButtons input, .latex button {
 	background-color: #C0DED9;
 	color: #3b3a30;
 	cursor: pointer;
 	padding: 10px 24px;
 	display: inline-block;
-	margin: 0 auto;
-	width: 150px;
+	margin: auto;
+	min-width: 140px;
+	max-width: 212px;
+	width: 30vw;
 	text-align: center;
 }
 
@@ -72,8 +74,9 @@ ul.header li a {
 }
 
 .view {
-	width: 45vw;
-	height: 30vw;
+	background-color: #eaf5e6;
+	width: 35vw;
+	height: 60vh;
 	margin: 0;
 	padding: auto 10px;
 	border: 5px inset #3b3a30;
@@ -83,12 +86,14 @@ ul.header li a {
 }
 
 .editing{
-	width: 18vw;
-	height: 10vw;
+
+	height: 60vh;
 	margin: 0;
-	padding: 0;
-	border: 1px double #3b3a30;
-	float: right;
+	padding: auto auto;
+	border: 5px inset #3b3a30;
+	border-radius: 2px;
+	border-left: 0px;
+	float: left;
 	text-align: center;
 }
 
@@ -96,9 +101,52 @@ ul.header li a {
 	background-color: #C0DED9;
 	color: #3b3a30;
 	cursor: pointer;
-	padding: 10px 24px;
-	display: inline-block;
-	margin: 0 auto;
-	width: 100%;
+	padding: 10px 15px;
+	margin: 1vh 1vw;
+	min-width: auto;
+	width: 8vw;
 	text-align: center;
 }
+
+.text-tools {
+	display: inline-block;
+}
+
+.plainText {
+	float: left;
+}
+
+.plainTextOutput input, .output {
+	background-color: #eaf5e6;
+	font-family: sans-serif;
+	font-size: 5vh;
+	width: 30vw;
+	height: 8vh;
+		
+}
+
+.plainTextButtons {
+	float: left;
+}
+
+.plainTextButtons form {
+	display: inline-block;
+	text-align: center;
+}
+
+.plainTextButtons button, .plainTextButtons input {
+	background-color: #C0DED9;
+	color: #3b3a30;
+	cursor: pointer;
+	padding: 10px 15px;
+	margin: 10px 1px;
+	min-width: auto;
+	width: 10vw;
+	font-family: sans-serif;
+	font-size: 2.3vh;
+	text-align: center;
+}
+
+
+
+
