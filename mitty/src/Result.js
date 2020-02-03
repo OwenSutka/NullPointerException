@@ -49,8 +49,11 @@ class Result extends Component {
     }
 
     handleCopy(event) {
-        alert("Result: "+ this.state.plain + " copied!")
         event.preventDefault();
+        document.querySelector('#equation').select()
+        document.execCommand("copy");
+        alert("Result: "+ this.state.plain + " copied!")
+        // event.preventDefault();
     }
 
     render() {
@@ -58,7 +61,7 @@ class Result extends Component {
 					<div className="text-tools">
                         <h3>Result</h3>
                         Plain Text:
-                        <input type="text" readOnly={this.state.canEdit} value={this.state.plain} name="plain" onChange={this.handleChange} />
+                        <input id="equation" type="text" readOnly={this.state.canEdit} value={this.state.plain} name="plain" onChange={this.handleChange} />
                         <button onClick={this.handleEdit}>{this.state.editMode}</button>
                         <button onClick={this.handleReset}>Reset plaintext</button>
                         <form onSubmit={this.handleCopy}>
