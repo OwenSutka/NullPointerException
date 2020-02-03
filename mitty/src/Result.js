@@ -53,7 +53,6 @@ class Result extends Component {
         document.querySelector('#equation').select()
         document.execCommand("copy");
         alert("Result: "+ this.state.plain + " copied!")
-        // event.preventDefault();
     }
 
     render() {
